@@ -1,14 +1,17 @@
-// src/components/Button.js
 import React from 'react';
+import PropTypes from 'prop-types';
 
-import '../designs/css/main.css';
-
-function Button({ onClick, text }) {
+function Button({ text, onClick }) {
   return (
-    <button onClick={onClick} className="sign-in-button">
+    <button className="sign-in-button" onClick={onClick}>
       {text}
     </button>
   );
 }
+
+Button.propTypes = {
+  text: PropTypes.string.isRequired,
+  onClick: PropTypes.func, // Ajoutez la prop onClick
+};
 
 export default Button;
